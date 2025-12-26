@@ -13,7 +13,7 @@ const Register = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    password2: "",
+    password_confirm: "",
     first_name: "",
     last_name: "",
   });
@@ -45,11 +45,11 @@ const Register = () => {
     const passwordError = validatePassword(formData.password);
     if (passwordError) newErrors.password = passwordError;
 
-    const password2Error = validatePasswordConfirmation(
+    const password_confirmError = validatePasswordConfirmation(
       formData.password,
-      formData.password2
+      formData.password_confirm
     );
-    if (password2Error) newErrors.password2 = password2Error;
+    if (password_confirmError) newErrors.password_confirm = password_confirmError;
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -200,7 +200,7 @@ const Register = () => {
             {/* Confirm Password */}
             <div>
               <label
-                htmlFor="password2"
+                htmlFor="password_confirm"
                 className="block text-sm font-medium text-slate-700 mb-2"
               >
                 Confirm Password
@@ -208,19 +208,19 @@ const Register = () => {
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
                 <input
-                  id="password2"
-                  name="password2"
+                  id="password_confirm"
+                  name="password_confirm"
                   type="password"
-                  value={formData.password2}
+                  value={formData.password_confirm}
                   onChange={handleChange}
                   className={`pl-10 input-field ${
-                    errors.password2 ? "border-red-500" : ""
+                    errors.password_confirm ? "border-red-500" : ""
                   }`}
                   placeholder="••••••••"
                 />
               </div>
-              {errors.password2 && (
-                <p className="mt-1 text-sm text-red-600">{errors.password2}</p>
+              {errors.password_confirm && (
+                <p className="mt-1 text-sm text-red-600">{errors.password_confirm}</p>
               )}
             </div>
 
