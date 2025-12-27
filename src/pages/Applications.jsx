@@ -8,7 +8,7 @@ import { useDebounce } from "../hooks/useDebounce";
 import ApplicationCard from "../components/applications/ApplicationCard";
 import ApplicationForm from "../components/applications/ApplicationForm";
 import Loader from "../components/common/Loader";
-import { Plus, Search, Filter, SlidersHorizontal } from "lucide-react";
+import { Plus, Search, Filter, SlidersHorizontal, Briefcase } from "lucide-react";
 import { APPLICATION_STATUS } from "../utils/constants";
 
 const Applications = () => {
